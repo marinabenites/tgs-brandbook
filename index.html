@@ -1,0 +1,2543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TGS Gaming — Brand Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #137DC5;
+    --blue-bright: #2199EA;
+    --blue-deep: #0F5F96;
+    --yellow: #FAE80F;
+    --yellow-light: #FBED41;
+    --yellow-dark: #D2C204;
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --gray-100: #F5F5F5;
+    --gray-200: #E8E8E8;
+    --gray-400: #9A9A9A;
+    --gray-600: #555;
+    --font-head: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(19,125,197,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-box {
+    background: var(--yellow);
+    padding: 4px 8px;
+    border: 2px solid var(--blue);
+  }
+
+  .nav-logo-box span {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--blue);
+    letter-spacing: 1px;
+  }
+
+  .nav-logo-text {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--yellow); }
+
+  /* ─── SECTIONS ─── */
+  section {
+    min-height: 100vh;
+    padding: 120px 80px 80px;
+    position: relative;
+  }
+
+  .section-label {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--blue);
+  }
+
+  .section-num {
+    color: var(--gray-400);
+    font-size: 10px;
+    margin-right: 4px;
+  }
+
+  /* ─── HERO ─── */
+  #cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    overflow: hidden;
+    background: var(--black);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 40%, rgba(19,125,197,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 20% 80%, rgba(250,232,15,0.08) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(19,125,197,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(19,125,197,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px 80px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    gap: 40px;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(64px, 9vw, 120px);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -3px;
+    margin-bottom: 32px;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--yellow);
+  }
+
+  .hero-tagline {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--gray-400);
+    max-width: 480px;
+    line-height: 1.7;
+    border-left: 2px solid var(--blue);
+    padding-left: 20px;
+    margin-bottom: 48px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 40px;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-meta-item .label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+
+  .hero-meta-item .value {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .hero-logo-block {
+    text-align: right;
+  }
+
+  .hero-logo-main {
+    background: var(--yellow);
+    display: inline-block;
+    padding: 28px 36px;
+    border: 3px solid var(--blue);
+    margin-bottom: 12px;
+  }
+
+  .hero-logo-main span {
+    font-family: var(--font-head);
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 2px;
+    display: block;
+    line-height: 1;
+  }
+
+  .hero-logo-main .gaming-sub {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 8px;
+    margin-top: 6px;
+    color: var(--blue);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    right: 80px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    transform: rotate(90deg);
+    transform-origin: right center;
+  }
+
+  .hero-scroll::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gray-400);
+  }
+
+  .hero-index {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-index-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: right;
+  }
+
+  .hero-index-item a {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .hero-index-item a:hover { color: var(--yellow); }
+
+  /* ─── TOCS ─── */
+  .toc {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-top: 60px;
+  }
+
+  .toc-item {
+    background: var(--black);
+    padding: 28px 24px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .toc-item:hover {
+    background: rgba(19,125,197,0.1);
+  }
+
+  .toc-num {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  .toc-title {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  /* ─── BIG HEADINGS ─── */
+  .ch {
+    font-family: var(--font-head);
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 40px;
+  }
+
+  .ch em { font-style: normal; color: var(--yellow); }
+
+  .ch .accent-line {
+    display: block;
+    color: var(--gray-400);
+    font-weight: 300;
+    font-size: 0.6em;
+    letter-spacing: 0;
+  }
+
+  /* ─── INTRO TEXT ─── */
+  .intro {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 680px;
+    line-height: 1.75;
+    margin-bottom: 60px;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--blue) 0%, transparent 60%);
+    margin: 60px 0;
+  }
+
+  /* ─── BRAND ESSÊNCIA ─── */
+  .essence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    margin-top: 60px;
+  }
+
+  .essence-card {
+    background: var(--black);
+    padding: 48px 40px;
+    border: 1px solid rgba(19,125,197,0.12);
+    transition: border-color 0.3s;
+  }
+
+  .essence-card:hover { border-color: rgba(19,125,197,0.4); }
+
+  .essence-card .icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(19,125,197,0.15);
+    border: 1px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 18px;
+  }
+
+  .essence-card h3 {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .essence-card p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+  }
+
+  .essence-card.highlight {
+    background: var(--blue);
+    border-color: var(--blue);
+  }
+
+  .essence-card.highlight h3,
+  .essence-card.highlight p {
+    color: var(--white);
+  }
+
+  .essence-card.highlight .icon {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  /* ─── POSITIONING ─── */
+  .positioning-quote {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    max-width: 900px;
+    border-left: 4px solid var(--yellow);
+    padding-left: 40px;
+    margin: 60px 0;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .positioning-quote em {
+    font-style: normal;
+    color: var(--yellow);
+  }
+
+  /* ─── PERSONALIDADE ─── */
+  .personality-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+    margin-top: 60px;
+  }
+
+  .personality-item {
+    background: var(--black);
+    padding: 32px 20px;
+    text-align: center;
+    border: 1px solid rgba(19,125,197,0.1);
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .personality-item:hover {
+    background: rgba(250,232,15,0.06);
+    border-color: var(--yellow);
+  }
+
+  .personality-item:hover .p-attr {
+    color: var(--yellow);
+  }
+
+  .p-attr {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    transition: color 0.25s;
+  }
+
+  .p-meaning {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--gray-400);
+    line-height: 1.5;
+  }
+
+  /* ─── ARQUÉTIPO ─── */
+  .archetype-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 60px;
+  }
+
+  .archetype-card {
+    border: 1px solid rgba(19,125,197,0.2);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .archetype-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    opacity: 0.06;
+    background: var(--blue);
+  }
+
+  .archetype-card.primary::before {
+    background: var(--yellow);
+    opacity: 0.08;
+  }
+
+  .archetype-type {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin-bottom: 12px;
+  }
+
+  .archetype-name {
+    font-family: var(--font-head);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  .archetype-name em {
+    font-style: normal;
+    color: var(--yellow);
+  }
+
+  .archetype-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .archetype-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border: 1px solid rgba(19,125,197,0.4);
+    color: var(--blue-bright);
+    text-transform: uppercase;
+  }
+
+  /* ─── CULTURA ─── */
+  .cultura-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 60px;
+  }
+
+  .cultura-table th {
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 2px solid var(--blue);
+    color: var(--blue-bright);
+  }
+
+  .cultura-table th:first-child {
+    color: var(--gray-400);
+    width: 180px;
+  }
+
+  .cultura-table td {
+    padding: 24px 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .cultura-table td:first-child {
+    font-family: var(--font-head);
+    font-weight: 600;
+    color: var(--white);
+    font-size: 13px;
+  }
+
+  .cultura-table tr:hover td {
+    background: rgba(19,125,197,0.04);
+  }
+
+  .cultura-highlight {
+    display: inline-block;
+    background: rgba(250,232,15,0.12);
+    color: var(--yellow-light);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-left: 2px solid var(--yellow);
+  }
+
+  /* ─── CORES ─── */
+  #cores { background: var(--black); }
+
+  .color-system {
+    margin-top: 60px;
+  }
+
+  .color-primary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .color-swatch {
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .color-swatch-blue { background: var(--blue); }
+  .color-swatch-yellow { background: var(--yellow); }
+  .color-swatch-blue-bright { background: var(--blue-bright); }
+  .color-swatch-blue-deep { background: var(--blue-deep); }
+  .color-swatch-yellow-light { background: var(--yellow-light); }
+  .color-swatch-yellow-dark { background: var(--yellow-dark); }
+  .color-swatch-black { background: #0A0A0A; border: 1px solid rgba(255,255,255,0.1); }
+  .color-swatch-white { background: #FFFFFF; }
+
+  .swatch-name {
+    font-family: var(--font-head);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .swatch-hex {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-bottom: 4px;
+  }
+
+  .swatch-role {
+    font-size: 11px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+
+  .on-blue { color: var(--white); }
+  .on-yellow { color: var(--blue-deep); }
+  .on-blue-bright { color: var(--white); }
+  .on-blue-deep { color: var(--white); }
+  .on-yellow-light { color: var(--blue-deep); }
+  .on-yellow-dark { color: var(--white); }
+  .on-black { color: rgba(255,255,255,0.9); }
+  .on-white { color: var(--blue-deep); }
+
+  .color-support {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    margin-bottom: 60px;
+  }
+
+  .color-support .color-swatch {
+    min-height: 140px;
+    padding: 24px 20px;
+  }
+
+  .color-support .swatch-name { font-size: 14px; }
+
+  .color-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .color-rule {
+    background: var(--black);
+    border: 1px solid rgba(19,125,197,0.12);
+    padding: 36px 32px;
+  }
+
+  .color-rule h3 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .color-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .color-rule ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .color-rule ul li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .color-rule ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-size: 10px;
+    top: 4px;
+  }
+
+  /* ─── TIPOGRAFIA ─── */
+  .type-showcase {
+    margin-top: 60px;
+  }
+
+  .type-family {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 48px 40px;
+    margin-bottom: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .type-family::after {
+    content: attr(data-font);
+    position: absolute;
+    right: 40px;
+    bottom: 24px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
+  }
+
+  .type-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin-bottom: 20px;
+  }
+
+  .type-display {
+    font-family: var(--font-head);
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  .type-display .em { color: var(--yellow); }
+
+  .type-weights {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .type-w {
+    font-family: var(--font-head);
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .type-rules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.04);
+    margin-top: 48px;
+  }
+
+  .type-rule {
+    background: var(--black);
+    border: 1px solid rgba(19,125,197,0.1);
+    padding: 28px 24px;
+  }
+
+  .type-rule-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+
+  .type-rule-value {
+    font-family: var(--font-head);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .type-rule-desc {
+    font-size: 12px;
+    color: var(--gray-400);
+    line-height: 1.6;
+  }
+
+  /* ─── LOGO ─── */
+  .logo-section {
+    margin-top: 60px;
+  }
+
+  .logo-versions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+
+  .logo-ver {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .logo-ver-dark { background: #0A0A0A; border: 1px solid rgba(255,255,255,0.08); }
+  .logo-ver-yellow { background: var(--yellow); }
+  .logo-ver-blue { background: var(--blue); }
+  .logo-ver-white { background: var(--white); }
+
+  .logo-box {
+    padding: 16px 24px;
+    border: 3px solid currentColor;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .logo-box-letters {
+    font-family: var(--font-head);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .logo-box-gaming {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 6px;
+  }
+
+  .logo-ver-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .logo-white-ver { color: var(--white); }
+  .logo-yellow-ver .logo-box,
+  .logo-yellow-ver .logo-ver-label { color: var(--blue-deep); }
+  .logo-blue-ver .logo-box,
+  .logo-blue-ver .logo-ver-label { color: var(--yellow); }
+
+  .logo-donts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .logo-dont {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .logo-dont::before {
+    content: '✕';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #E24B4A;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .dont-visual {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .dont-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+  }
+
+  /* ─── SISTEMA GRÁFICO ─── */
+  .graphic-elements {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .graphic-el {
+    border: 1px solid rgba(19,125,197,0.15);
+    padding: 40px 24px;
+    text-align: center;
+    transition: border-color 0.25s;
+  }
+
+  .graphic-el:hover { border-color: var(--blue); }
+
+  .graphic-el-visual {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+
+  .graphic-el h3 {
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .graphic-el p {
+    font-size: 11px;
+    color: var(--gray-400);
+    line-height: 1.5;
+  }
+
+  /* SVG illustration elements */
+  .el-motion { stroke: var(--blue-bright); stroke-width: 2; fill: none; }
+  .el-frame { stroke: var(--blue); stroke-width: 1.5; fill: none; }
+  .el-glow-c { fill: none; stroke: var(--yellow); stroke-width: 1; }
+  .el-grid { stroke: rgba(19,125,197,0.4); stroke-width: 0.8; fill: none; }
+  .el-depth { fill: rgba(19,125,197,0.15); stroke: var(--blue-bright); stroke-width: 1; }
+
+  /* ─── VOZ E TOM ─── */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .voice-col {
+    padding: 48px 40px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .voice-col.never {
+    border-color: rgba(226,75,74,0.2);
+    background: rgba(226,75,74,0.02);
+  }
+
+  .voice-col.always {
+    border-color: rgba(19,125,197,0.2);
+    background: rgba(19,125,197,0.04);
+  }
+
+  .voice-col h3 {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .voice-col.never h3 { color: #E24B4A; }
+  .voice-col.always h3 { color: var(--blue-bright); }
+
+  .voice-ex {
+    margin-bottom: 20px;
+  }
+
+  .voice-ex-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 6px;
+  }
+
+  .voice-ex-text {
+    font-size: 15px;
+    line-height: 1.65;
+    padding: 14px 18px;
+    border-left: 2px solid;
+  }
+
+  .never .voice-ex-text {
+    border-color: rgba(226,75,74,0.4);
+    color: rgba(255,255,255,0.5);
+    background: rgba(226,75,74,0.05);
+    text-decoration: line-through;
+    text-decoration-color: rgba(226,75,74,0.4);
+  }
+
+  .always .voice-ex-text {
+    border-color: var(--blue);
+    color: rgba(255,255,255,0.85);
+    background: rgba(19,125,197,0.06);
+  }
+
+  /* ─── MANIFESTO ─── */
+  #manifesto {
+    background: var(--blue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #manifesto::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .manifesto-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+  }
+
+  .manifesto-big {
+    font-family: var(--font-head);
+    font-size: clamp(48px, 8vw, 108px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    color: var(--white);
+    margin-bottom: 48px;
+  }
+
+  .manifesto-big .y { color: var(--yellow); }
+
+  .manifesto-body {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+    max-width: 640px;
+  }
+
+  .manifesto-body strong {
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .manifesto-body em {
+    font-style: normal;
+    color: var(--yellow);
+  }
+
+  .manifesto-sign {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .manifesto-sign-bar {
+    width: 48px;
+    height: 3px;
+    background: var(--yellow);
+  }
+
+  .manifesto-sign-text {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ─── APLICAÇÕES ─── */
+  .aplicacoes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 60px;
+  }
+
+  .app-card {
+    border: 1px solid rgba(19,125,197,0.15);
+    overflow: hidden;
+  }
+
+  .app-card-header {
+    padding: 12px 20px;
+    background: rgba(19,125,197,0.08);
+    border-bottom: 1px solid rgba(19,125,197,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .app-card-header span {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+  }
+
+  .app-card-body {
+    padding: 32px;
+  }
+
+  /* Business Card mockup */
+  .bc-wrap {
+    display: flex;
+    gap: 12px;
+  }
+
+  .bc-front {
+    width: 220px;
+    height: 140px;
+    background: var(--yellow);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--blue);
+  }
+
+  .bc-front .logo-box {
+    color: var(--blue-deep);
+    border-color: var(--blue-deep);
+    padding: 8px 14px;
+  }
+
+  .bc-front .logo-box-letters { font-size: 22px; }
+  .bc-front .logo-box-gaming { font-size: 7px; }
+
+  .bc-back {
+    width: 220px;
+    height: 140px;
+    background: #f5f5f5;
+    flex-shrink: 0;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+  }
+
+  .bc-back-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .bc-name {
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 2px;
+  }
+
+  .bc-title {
+    font-size: 9px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .bc-contact {
+    font-size: 9px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .bc-logo-small {
+    background: var(--yellow);
+    padding: 3px 6px;
+    border: 1.5px solid var(--blue);
+  }
+
+  .bc-logo-small span {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--blue);
+    display: block;
+    line-height: 1;
+  }
+
+  .bc-logo-small .gs {
+    font-size: 6px;
+    letter-spacing: 2px;
+  }
+
+  /* Social Media mockup */
+  .social-post {
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 280px;
+    background: #0a0a0a;
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .social-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 70% 30%, rgba(19,125,197,0.3) 0%, transparent 70%);
+  }
+
+  .social-content {
+    position: relative;
+    z-index: 2;
+    padding: 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .social-logo-sm {
+    display: inline-flex;
+    background: var(--yellow);
+    padding: 5px 8px;
+    border: 2px solid var(--blue);
+    align-items: center;
+    gap: 2px;
+  }
+
+  .social-logo-sm span {
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--blue-deep);
+    line-height: 1;
+  }
+
+  .social-headline {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .social-headline em { font-style: normal; color: var(--yellow); }
+
+  .social-meta {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Email sig */
+  .email-sig-mockup {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 24px 28px;
+    max-width: 420px;
+  }
+
+  .sig-name {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2px;
+  }
+
+  .sig-role {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 16px;
+  }
+
+  .sig-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--yellow);
+    margin-bottom: 16px;
+  }
+
+  .sig-contact {
+    font-size: 12px;
+    color: #555;
+    line-height: 2;
+  }
+
+  .sig-contact a { color: var(--blue); text-decoration: none; }
+
+  .sig-logo-wrap {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ─── SOCIAL & DIGITAL ─── */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .pillar {
+    border: 1px solid rgba(19,125,197,0.15);
+    padding: 36px 24px;
+    text-align: center;
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .pillar:hover {
+    background: rgba(19,125,197,0.08);
+    border-color: var(--blue);
+  }
+
+  .pillar-num {
+    font-family: var(--font-head);
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(19,125,197,0.3);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .pillar h3 {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .pillar p {
+    font-size: 12px;
+    color: var(--gray-400);
+    line-height: 1.55;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #040404;
+    border-top: 1px solid rgba(19,125,197,0.15);
+    padding: 60px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-left .f-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 8px;
+  }
+
+  .footer-left .f-title {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .footer-right {
+    font-size: 12px;
+    color: var(--gray-400);
+    text-align: right;
+    line-height: 2;
+  }
+
+  /* ─── UTILITIES ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .yellow-bar {
+    display: inline-block;
+    width: 4px;
+    height: 1em;
+    background: var(--yellow);
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .blue-text { color: var(--blue-bright); }
+  .yellow-text { color: var(--yellow); }
+  .muted { color: rgba(255,255,255,0.5); }
+
+  .mt40 { margin-top: 40px; }
+  .mt60 { margin-top: 60px; }
+  .mt80 { margin-top: 80px; }
+
+  .print-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--yellow);
+    color: var(--blue-deep);
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid var(--blue-deep);
+    transition: background 0.2s;
+  }
+
+  .print-btn:hover { background: var(--yellow-light); }
+
+  @media print {
+    .nav, .print-btn { display: none; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#cover" class="nav-logo">
+    <div class="nav-logo-box"><span>TGS</span></div>
+    <span class="nav-logo-text">Gaming</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#essencia">Essência</a></li>
+    <li><a href="#cores">Cores</a></li>
+    <li><a href="#tipografia">Tipografia</a></li>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#voz">Voz</a></li>
+    <li><a href="#aplicacoes">Aplicações</a></li>
+    <li><a href="#manifesto">Manifesto</a></li>
+  </ul>
+</nav>
+
+<button class="print-btn" onclick="window.print()">Exportar PDF</button>
+
+<!-- ─────────────────────────────────────────────
+     CAPA
+───────────────────────────────────────────── -->
+<section id="cover">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div>
+      <p class="hero-eyebrow">Brand Book — Sistema Visual & Identidade</p>
+      <h1 class="hero-title">
+        BRAND<br>
+        <em>BOOK</em>
+      </h1>
+      <p class="hero-tagline">
+        "Não criamos apenas jogos.<br>
+        Criamos momentum, emoção e experiências<br>que movem pessoas."
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="label">Versão</span>
+          <span class="value">1.0 — 2025</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Uso</span>
+          <span class="value">Interno & Externo</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Marca</span>
+          <span class="value">TGS Gaming</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-logo-block">
+      <div class="hero-logo-main">
+        <span>TGS</span>
+        <span class="gaming-sub">GAMING</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- índice lateral -->
+  <div class="toc" style="margin: 0; border-top: 1px solid rgba(19,125,197,0.15);">
+    <a href="#essencia" class="toc-item">
+      <div class="toc-num">01</div>
+      <div class="toc-title">Essência da Marca</div>
+    </a>
+    <a href="#posicionamento" class="toc-item">
+      <div class="toc-num">02</div>
+      <div class="toc-title">Posicionamento & Personalidade</div>
+    </a>
+    <a href="#cores" class="toc-item">
+      <div class="toc-num">03</div>
+      <div class="toc-title">Sistema de Cores</div>
+    </a>
+    <a href="#tipografia" class="toc-item">
+      <div class="toc-num">04</div>
+      <div class="toc-title">Tipografia</div>
+    </a>
+    <a href="#logo" class="toc-item">
+      <div class="toc-num">05</div>
+      <div class="toc-title">Sistema de Logo</div>
+    </a>
+    <a href="#grafico" class="toc-item">
+      <div class="toc-num">06</div>
+      <div class="toc-title">Sistema Gráfico</div>
+    </a>
+    <a href="#voz" class="toc-item">
+      <div class="toc-num">07</div>
+      <div class="toc-title">Voz & Tom</div>
+    </a>
+    <a href="#aplicacoes" class="toc-item">
+      <div class="toc-num">08</div>
+      <div class="toc-title">Aplicações</div>
+    </a>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     01 ESSÊNCIA
+───────────────────────────────────────────── -->
+<section id="essencia">
+  <div class="section-label"><span class="section-num">01</span> Essência da Marca</div>
+  <h2 class="ch">QUEM<br><em>SOMOS</em></h2>
+  <p class="intro">
+    TGS Gaming não é apenas uma empresa de games. É um estúdio construído por criadores obcecados com game feel, emoção, entretenimento e visão de produto. Uma empresa nascida da combinação de criatividade, tecnologia, execução e profundo entendimento do comportamento do jogador.
+  </p>
+
+  <div class="essence-grid">
+    <div class="essence-card">
+      <div class="icon">🎮</div>
+      <h3>Criatividade</h3>
+      <p>Criamos experiências, não commodities. Cada produto nasce de uma intenção criativa clara e de uma obsessão por detalhe e game feel.</p>
+    </div>
+    <div class="essence-card highlight">
+      <div class="icon" style="border-color:rgba(255,255,255,0.5)">⚡</div>
+      <h3>Tecnologia</h3>
+      <p>Construímos sobre infraestrutura moderna, interfaces inteligentes e sistemas que escalam. A tecnologia não é suporte — é linguagem.</p>
+    </div>
+    <div class="essence-card">
+      <div class="icon">🎯</div>
+      <h3>Execução</h3>
+      <p>Colocamos no mundo as versões que podem evoluir. Feito é melhor que perfeito. Velocidade com intenção define a nossa cadência.</p>
+    </div>
+    <div class="essence-card">
+      <div class="icon">🧠</div>
+      <h3>Comportamento do Jogador</h3>
+      <p>Entendemos psicologia, motivação e o que cria engajamento real. Nossos produtos são desenhados com empatia pelo jogador.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label" style="margin-bottom:24px"><span class="section-num">01.1</span> Onde Operamos</div>
+  <div class="three-col">
+    <div>
+      <div style="font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 12px;">Setores</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="padding: 12px 16px; border: 1px solid rgba(19,125,197,0.2); font-size: 14px; color: rgba(255,255,255,0.75);">Gaming</div>
+        <div style="padding: 12px 16px; border: 1px solid rgba(19,125,197,0.2); font-size: 14px; color: rgba(255,255,255,0.75);">Entretenimento</div>
+        <div style="padding: 12px 16px; border: 1px solid rgba(19,125,197,0.2); font-size: 14px; color: rgba(255,255,255,0.75);">Psicologia do Jogador</div>
+        <div style="padding: 12px 16px; border: 1px solid rgba(19,125,197,0.2); font-size: 14px; color: rgba(255,255,255,0.75);">Tecnologia</div>
+        <div style="padding: 12px 16px; border: 1px solid rgba(19,125,197,0.2); font-size: 14px; color: rgba(255,255,255,0.75);">Performance de Negócio</div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 12px;">A Marca Comunica</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="padding: 12px 16px; border-left: 2px solid var(--yellow); font-size: 14px; color: rgba(255,255,255,0.75); background: rgba(250,232,15,0.04);">Confiança</div>
+        <div style="padding: 12px 16px; border-left: 2px solid var(--yellow); font-size: 14px; color: rgba(255,255,255,0.75); background: rgba(250,232,15,0.04);">Inovação</div>
+        <div style="padding: 12px 16px; border-left: 2px solid var(--yellow); font-size: 14px; color: rgba(255,255,255,0.75); background: rgba(250,232,15,0.04);">Agilidade</div>
+        <div style="padding: 12px 16px; border-left: 2px solid var(--yellow); font-size: 14px; color: rgba(255,255,255,0.75); background: rgba(250,232,15,0.04);">Profissionalismo</div>
+        <div style="padding: 12px 16px; border-left: 2px solid var(--yellow); font-size: 14px; color: rgba(255,255,255,0.75); background: rgba(250,232,15,0.04);">Conexão Emocional</div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 12px;">Não Somos</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="padding: 12px 16px; border: 1px solid rgba(226,75,74,0.2); font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Gaming infantil / genérico</div>
+        <div style="padding: 12px 16px; border: 1px solid rgba(226,75,74,0.2); font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Esports genérico</div>
+        <div style="padding: 12px 16px; border: 1px solid rgba(226,75,74,0.2); font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Tecnologia corporativa fria</div>
+        <div style="padding: 12px 16px; border: 1px solid rgba(226,75,74,0.2); font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Clichê de cassino</div>
+        <div style="padding: 12px 16px; border: 1px solid rgba(226,75,74,0.2); font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Burocrático e genérico</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     02 POSICIONAMENTO & PERSONALIDADE
+───────────────────────────────────────────── -->
+<section id="posicionamento">
+  <div class="section-label"><span class="section-num">02</span> Posicionamento & Personalidade</div>
+  <h2 class="ch">COMO<br><em>SOAMOS</em></h2>
+
+  <blockquote class="positioning-quote">
+    "TGS Gaming cria experiências de gaming modernas que combinam <em>entretenimento</em>, performance e <em>inteligência de produto</em>."
+  </blockquote>
+
+  <div class="section-label" style="margin-bottom:32px"><span class="section-num">02.1</span> Personalidade da Marca</div>
+
+  <div class="personality-grid">
+    <div class="personality-item">
+      <div class="p-attr">Ousada</div>
+      <div class="p-meaning">Nos movemos rápido e somos donos do resultado</div>
+    </div>
+    <div class="personality-item">
+      <div class="p-attr">Moderna</div>
+      <div class="p-meaning">Pensamos à frente do mercado</div>
+    </div>
+    <div class="personality-item">
+      <div class="p-attr">Criativa</div>
+      <div class="p-meaning">Construímos experiências, não commodities</div>
+    </div>
+    <div class="personality-item">
+      <div class="p-attr">Estratégica</div>
+      <div class="p-meaning">Tudo tem intenção por trás</div>
+    </div>
+    <div class="personality-item">
+      <div class="p-attr">Humana</div>
+      <div class="p-meaning">Colaboramos e crescemos juntos</div>
+    </div>
+    <div class="personality-item">
+      <div class="p-attr">Enérgica</div>
+      <div class="p-meaning">A marca se sente viva e em movimento</div>
+    </div>
+    <div class="personality-item">
+      <div class="p-attr">Premium</div>
+      <div class="p-meaning">Qualidade visível em cada detalhe</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label" style="margin-bottom:32px"><span class="section-num">02.2</span> Arquétipos da Marca</div>
+
+  <div class="archetype-layout">
+    <div class="archetype-card primary">
+      <div class="archetype-type">Arquétipo Primário</div>
+      <div class="archetype-name">O <em>Criador</em></div>
+      <p class="archetype-desc">
+        A TGS existe para criar. Não replicar. Não seguir. <strong>Criar.</strong> O arquétipo Criador posiciona a marca como imaginativa, visionária, artística, inovadora e emocionalmente dirigida.
+      </p>
+      <div class="archetype-tags">
+        <span class="tag">Imaginativo</span>
+        <span class="tag">Visionário</span>
+        <span class="tag">Artístico</span>
+        <span class="tag">Inovador</span>
+        <span class="tag">Emocional</span>
+      </div>
+    </div>
+    <div class="archetype-card">
+      <div class="archetype-type">Arquétipo Secundário</div>
+      <div class="archetype-name">O <em>Explorador</em></div>
+      <p class="archetype-desc">
+        A TGS avança para novos mercados, tecnologias e possibilidades. A marca deve sempre parecer ambiciosa, evoluindo, curiosa e orientada ao futuro.
+      </p>
+      <div class="archetype-tags">
+        <span class="tag">Ambicioso</span>
+        <span class="tag">Em evolução</span>
+        <span class="tag">Curioso</span>
+        <span class="tag">Futuro</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label" style="margin-bottom:32px"><span class="section-num">02.3</span> Cultura como Linguagem Visual</div>
+  <p class="intro" style="margin-bottom: 32px;">A cultura interna da TGS faz parte do sistema de marca. A forma como a empresa se comporta DEVE influenciar a linguagem visual.</p>
+
+  <table class="cultura-table">
+    <thead>
+      <tr>
+        <th>Território</th>
+        <th>Tradução Emocional</th>
+        <th>Expressão Visual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Velocidade e Execução</td>
+        <td><span class="cultura-highlight">Fazemos acontecer</span></td>
+        <td>Motion, energia, layouts dinâmicos com direção</td>
+      </tr>
+      <tr>
+        <td>Accountability</td>
+        <td><span class="cultura-highlight">Somos donos do resultado</span></td>
+        <td>Estrutura forte, hierarquia clara, tipografia assertiva</td>
+      </tr>
+      <tr>
+        <td>Colaboração</td>
+        <td><span class="cultura-highlight">Confiamos uns nos outros</span></td>
+        <td>Sistemas conectados, design modular e integrado</td>
+      </tr>
+      <tr>
+        <td>Feedback</td>
+        <td><span class="cultura-highlight">Confrontamos para evoluir</span></td>
+        <td>Transparência, abertura, contraste entre elementos</td>
+      </tr>
+      <tr>
+        <td>Inovação</td>
+        <td><span class="cultura-highlight">Inovamos com método</span></td>
+        <td>Camadas visuais experimentais, texturas digitais</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     03 CORES
+───────────────────────────────────────────── -->
+<section id="cores">
+  <div class="section-label"><span class="section-num">03</span> Sistema de Cores</div>
+  <h2 class="ch">SISTEMA<br>DE <em>CORES</em></h2>
+  <p class="intro">O sistema de cores da TGS é construído em torno de uma tensão fundamental: azul como estrutura e amarelo como emoção. Dois pólos que juntos criam energia controlada.</p>
+
+  <div class="color-system">
+    <!-- Primárias -->
+    <div class="section-label" style="margin-bottom: 20px"><span class="section-num">03.1</span> Cores Primárias</div>
+    <div class="color-primary">
+      <div class="color-swatch color-swatch-blue on-blue">
+        <div class="swatch-name">Azul Elétrico</div>
+        <div class="swatch-hex">#137DC5 — rgb(19, 125, 197)</div>
+        <div class="swatch-role">Cor principal de estrutura e interface</div>
+      </div>
+      <div class="color-swatch color-swatch-yellow on-yellow">
+        <div class="swatch-name">Amarelo Neon</div>
+        <div class="swatch-hex">#FAE80F — rgb(250, 232, 15)</div>
+        <div class="swatch-role">Cor de ação, destaque e emoção</div>
+      </div>
+    </div>
+
+    <!-- Suporte -->
+    <div class="section-label" style="margin: 32px 0 20px"><span class="section-num">03.2</span> Cores de Suporte</div>
+    <div class="color-support">
+      <div class="color-swatch color-swatch-blue-bright on-blue-bright">
+        <div class="swatch-name">Azul Brilhante</div>
+        <div class="swatch-hex">#2199EA</div>
+        <div class="swatch-role">Links, destaques digitais</div>
+      </div>
+      <div class="color-swatch color-swatch-blue-deep on-blue-deep">
+        <div class="swatch-name">Azul Profundo</div>
+        <div class="swatch-hex">#0F5F96</div>
+        <div class="swatch-role">Sombras, contraste</div>
+      </div>
+      <div class="color-swatch color-swatch-yellow-light on-yellow-light">
+        <div class="swatch-name">Amarelo Claro</div>
+        <div class="swatch-hex">#FBED41</div>
+        <div class="swatch-role">Hover, variações suaves</div>
+      </div>
+      <div class="color-swatch color-swatch-yellow-dark on-yellow-dark">
+        <div class="swatch-name">Amarelo Escuro</div>
+        <div class="swatch-hex">#D2C204</div>
+        <div class="swatch-role">Press states, tonalidade</div>
+      </div>
+      <div class="color-swatch color-swatch-black on-black">
+        <div class="swatch-name">Preto Profundo</div>
+        <div class="swatch-hex">#0A0A0A</div>
+        <div class="swatch-role">Background primário</div>
+      </div>
+      <div class="color-swatch color-swatch-white on-white">
+        <div class="swatch-name">Branco</div>
+        <div class="swatch-hex">#FFFFFF</div>
+        <div class="swatch-role">Contraste, aplicações light</div>
+      </div>
+    </div>
+
+    <!-- Regras de uso -->
+    <div class="section-label" style="margin-bottom: 24px"><span class="section-num">03.3</span> Comportamento das Cores</div>
+    <div class="color-rules">
+      <div class="color-rule">
+        <h3>
+          <div class="color-dot" style="background: var(--blue)"></div>
+          Azul representa
+        </h3>
+        <ul>
+          <li>Estrutura e organização</li>
+          <li>Tecnologia e interface</li>
+          <li>Lógica e precisão</li>
+          <li>Confiança e inteligência digital</li>
+        </ul>
+      </div>
+      <div class="color-rule">
+        <h3>
+          <div class="color-dot" style="background: var(--yellow)"></div>
+          Amarelo representa
+        </h3>
+        <ul>
+          <li>Emoção e energia</li>
+          <li>Destaques e chamadas à ação</li>
+          <li>Movimento e interação</li>
+          <li>Inovação e visibilidade</li>
+        </ul>
+      </div>
+      <div class="color-rule" style="grid-column: 1 / -1;">
+        <h3>Equilíbrio Visual — Como usar</h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 8px;">Fundos</div>
+            <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65;">Prefira fundos escuros (preto ou azul profundo) como base dominante. Isso dá contraste e premium.</p>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 8px;">Neon & Acentos</div>
+            <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65;">Use amarelo e azul brilhante com controle. São acentos — não cor de fundo dominante.</p>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 8px;">Alto Contraste</div>
+            <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65;">Sempre priorize legibilidade. Nunca coloque amarelo sobre branco ou azul claro sobre verde.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     04 TIPOGRAFIA
+───────────────────────────────────────────── -->
+<section id="tipografia">
+  <div class="section-label"><span class="section-num">04</span> Tipografia</div>
+  <h2 class="ch">TIPO<br><em>GRAFIA</em></h2>
+  <p class="intro">A tipografia TGS deve ser moderna, limpa, digital e geométrica. Confiante. Nunca excessivamente corporativa.</p>
+
+  <div class="type-showcase">
+    <div class="type-family" data-font="DISPLAY / HEADER">
+      <div class="type-label">Fonte de Destaque — Space Grotesk</div>
+      <div class="type-display">CRIE<br><span class="em">EXPERIÊNCIAS.</span></div>
+      <div class="type-weights">
+        <span class="type-w" style="font-weight: 300;">Light 300</span>
+        <span class="type-w" style="font-weight: 400;">Regular 400</span>
+        <span class="type-w" style="font-weight: 500;">Medium 500</span>
+        <span class="type-w" style="font-weight: 600;">SemiBold 600</span>
+        <span class="type-w" style="font-weight: 700;">Bold 700</span>
+      </div>
+      <p style="font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 8px;">
+        Alternativas aprovadas: Satoshi · Eurostile Extended · Monument Extended · Clash Display
+      </p>
+    </div>
+
+    <div class="type-family" data-font="BODY / COPY" style="background: rgba(255,255,255,0.015);">
+      <div class="type-label">Fonte de Corpo — Inter</div>
+      <div style="font-family: var(--font-body); font-size: 22px; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.8); max-width: 700px; margin-bottom: 20px;">
+        Em publicação e design gráfico, a tipografia é o trabalho de designers que arranjam letras, números e símbolos para criar hierarquias visuais claras e funcionais.
+      </div>
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <span style="font-family: var(--font-body); font-weight: 300; color: rgba(255,255,255,0.4); font-size: 14px;">Light 300</span>
+        <span style="font-family: var(--font-body); font-weight: 400; color: rgba(255,255,255,0.4); font-size: 14px;">Regular 400</span>
+        <span style="font-family: var(--font-body); font-weight: 500; color: rgba(255,255,255,0.4); font-size: 14px;">Medium 500</span>
+      </div>
+      <p style="font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 8px;">
+        Alternativas aprovadas: Manrope · General Sans · Plus Jakarta Sans
+      </p>
+    </div>
+  </div>
+
+  <div class="type-rules">
+    <div class="type-rule">
+      <div class="type-rule-label">Headlines</div>
+      <div class="type-rule-value">BIG.</div>
+      <div class="type-rule-desc">Grandes, em negrito, com poucas palavras. Espaçamento generoso. Impacto imediato.</div>
+    </div>
+    <div class="type-rule">
+      <div class="type-rule-label">Body Copy</div>
+      <div class="type-rule-value" style="font-size: 20px; font-weight: 400;">Funcional.</div>
+      <div class="type-rule-desc">Claro, funcional e humano. Nunca excessivamente corporativo. Leitura fácil.</div>
+    </div>
+    <div class="type-rule">
+      <div class="type-rule-label">Labels & Tags</div>
+      <div class="type-rule-value" style="font-size: 14px; letter-spacing: 4px; font-weight: 600; text-transform: uppercase;">PRÉCISO</div>
+      <div class="type-rule-desc">Letras maiúsculas, letra-espaçamento amplo. Comunicação direta e técnica.</div>
+    </div>
+    <div class="type-rule">
+      <div class="type-rule-label">Escala Tipográfica</div>
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-family: var(--font-head); font-size: 28px; font-weight: 700; line-height: 1;">H1</span>
+          <span style="font-size: 11px; color: var(--gray-400);">64–120px / Bold</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-family: var(--font-head); font-size: 22px; font-weight: 700; line-height: 1;">H2</span>
+          <span style="font-size: 11px; color: var(--gray-400);">36–64px / Bold</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-family: var(--font-head); font-size: 18px; font-weight: 600; line-height: 1;">H3</span>
+          <span style="font-size: 11px; color: var(--gray-400);">24–36px / SemiBold</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-size: 14px; line-height: 1;">Body</span>
+          <span style="font-size: 11px; color: var(--gray-400);">15–18px / Regular</span>
+        </div>
+      </div>
+    </div>
+    <div class="type-rule">
+      <div class="type-rule-label">Contraste Tipográfico</div>
+      <div style="margin-top: 8px;">
+        <div style="font-family: var(--font-head); font-size: 40px; font-weight: 700; color: var(--white); line-height: 1;">MOVE</div>
+        <div style="font-family: var(--font-body); font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); margin-top: 4px;">The future of gaming is here</div>
+      </div>
+      <div class="type-rule-desc" style="margin-top: 12px;">Contraste entre peso display e corpo leve cria hierarquia visual forte.</div>
+    </div>
+    <div class="type-rule">
+      <div class="type-rule-label">Nunca Faça</div>
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+        <div style="font-size: 13px; color: rgba(226,75,74,0.7); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Arial / Times New Roman</div>
+        <div style="font-size: 13px; color: rgba(226,75,74,0.7); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Texto em 8px ou menor</div>
+        <div style="font-size: 13px; color: rgba(226,75,74,0.7); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Todo caps em parágrafos</div>
+        <div style="font-size: 13px; color: rgba(226,75,74,0.7); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Itálico excessivo</div>
+        <div style="font-size: 13px; color: rgba(226,75,74,0.7); text-decoration: line-through; text-decoration-color: rgba(226,75,74,0.5);">Mais de 3 fontes distintas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     05 LOGO
+───────────────────────────────────────────── -->
+<section id="logo">
+  <div class="section-label"><span class="section-num">05</span> Sistema de Logo</div>
+  <h2 class="ch">SISTEMA<br>DE <em>LOGO</em></h2>
+  <p class="intro">O logo TGS deve sempre comunicar clareza, confiança e reconhecimento. É o símbolo mais poderoso da marca — use-o com respeito.</p>
+
+  <div class="logo-section">
+    <div class="section-label" style="margin-bottom: 24px"><span class="section-num">05.1</span> Versões do Logo</div>
+
+    <div class="logo-versions">
+      <div class="logo-ver logo-ver-dark">
+        <div class="logo-box logo-white-ver">
+          <div class="logo-box-letters">TGS</div>
+          <div class="logo-box-gaming">GAMING</div>
+        </div>
+        <div class="logo-ver-label logo-white-ver" style="font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Versão Branca</div>
+        <div style="font-size: 11px; color: var(--gray-400); text-align: center; margin-top: 4px;">Fundos escuros e fotografia</div>
+      </div>
+      <div class="logo-ver logo-ver-yellow">
+        <div class="logo-box" style="border-color: var(--blue-deep); color: var(--blue-deep);">
+          <div class="logo-box-letters">TGS</div>
+          <div class="logo-box-gaming">GAMING</div>
+        </div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-deep); margin-top: 12px;">Versão Amarela</div>
+        <div style="font-size: 11px; color: var(--blue-deep); opacity: 0.6; text-align: center; margin-top: 4px;">Fundos escuros como background</div>
+      </div>
+      <div class="logo-ver logo-ver-blue">
+        <div class="logo-box" style="border-color: var(--yellow); color: var(--yellow);">
+          <div class="logo-box-letters">TGS</div>
+          <div class="logo-box-gaming">GAMING</div>
+        </div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); margin-top: 12px;">Versão Azul</div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.5); text-align: center; margin-top: 4px;">Fundos azul ou azul profundo</div>
+      </div>
+    </div>
+
+    <!-- Área de segurança -->
+    <div class="section-label" style="margin: 40px 0 20px"><span class="section-num">05.2</span> Área de Proteção</div>
+    <div style="border: 1px solid rgba(19,125,197,0.2); padding: 40px; display: flex; align-items: center; gap: 60px;">
+      <div style="position: relative; padding: 32px;">
+        <div style="position: absolute; inset: 0; border: 1px dashed rgba(250,232,15,0.3);"></div>
+        <div style="position: absolute; top: -1px; left: -1px; right: -1px; height: 32px; border-top: 1px dashed rgba(250,232,15,0.3);"></div>
+        <div class="logo-box" style="border-color: var(--white); color: var(--white); padding: 12px 20px;">
+          <div class="logo-box-letters" style="font-size: 28px;">TGS</div>
+          <div class="logo-box-gaming" style="font-size: 7px; letter-spacing: 5px;">GAMING</div>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: -20px; text-align: center; font-size: 10px; color: var(--yellow); letter-spacing: 2px; text-transform: uppercase;">← T →</div>
+      </div>
+      <div style="flex: 1;">
+        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 16px;">
+          Sempre mantenha um espaço livre em volta do logo equivalente à altura da letra "T". Isso garante que o logo respire e tenha legibilidade em qualquer contexto.
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+          <div style="padding: 12px 16px; background: rgba(19,125,197,0.1); border: 1px solid rgba(19,125,197,0.2);">
+            <div style="font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 4px;">Use sobre</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.7);">Preto, azul escuro, branco, gradientes sutis</div>
+          </div>
+          <div style="padding: 12px 16px; background: rgba(226,75,74,0.05); border: 1px solid rgba(226,75,74,0.2);">
+            <div style="font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #E24B4A; margin-bottom: 4px;">Evite</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.7);">Fotografias detalhadas, texturas ocupadas, baixo contraste</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Não faça -->
+    <div class="section-label" style="margin: 40px 0 20px"><span class="section-num">05.3</span> O Que Nunca Fazer</div>
+    <div class="logo-donts">
+      <div class="logo-dont">
+        <div class="dont-visual">
+          <div class="logo-box" style="border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.3); transform: rotate(25deg); padding: 6px 12px;">
+            <div class="logo-box-letters" style="font-size: 18px;">TGS</div>
+          </div>
+        </div>
+        <div class="dont-label">Nunca rotacione o logo</div>
+      </div>
+      <div class="logo-dont">
+        <div class="dont-visual">
+          <div class="logo-box" style="border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.3); transform: scaleX(1.6); padding: 6px 12px;">
+            <div class="logo-box-letters" style="font-size: 18px;">TGS</div>
+          </div>
+        </div>
+        <div class="dont-label">Nunca distorça as proporções</div>
+      </div>
+      <div class="logo-dont">
+        <div class="dont-visual">
+          <div style="position: relative; display: inline-block;">
+            <div class="logo-box" style="border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.3); padding: 6px 12px;">
+              <div class="logo-box-letters" style="font-size: 18px;">TGS</div>
+            </div>
+            <div style="position: absolute; top: 0; left: 0; width: 40%; height: 100%; background: rgba(100,100,255,0.6);"></div>
+          </div>
+        </div>
+        <div class="dont-label">Nunca cubra parcialmente</div>
+      </div>
+      <div class="logo-dont">
+        <div class="dont-visual" style="position: relative; width: 100%; overflow: hidden; border-radius: 2px;">
+          <div style="background: linear-gradient(135deg, #3a5a6c, #8b6914, #4a2a2a); position: absolute; inset: 0;"></div>
+          <div style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; height: 80px;">
+            <div class="logo-box" style="border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.6); padding: 6px 12px;">
+              <div class="logo-box-letters" style="font-size: 18px;">TGS</div>
+            </div>
+          </div>
+        </div>
+        <div class="dont-label">Nunca coloque sobre fundos visuais caóticos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     06 SISTEMA GRÁFICO
+───────────────────────────────────────────── -->
+<section id="grafico">
+  <div class="section-label"><span class="section-num">06</span> Sistema Gráfico</div>
+  <h2 class="ch"><em>ENERGIA</em><br>CONTROLADA</h2>
+  <p class="intro">O conceito visual central da TGS é "Energia Controlada": movimento com precisão, criatividade com estrutura, velocidade com inteligência.</p>
+
+  <div class="graphic-elements">
+    <div class="graphic-el">
+      <div class="graphic-el-visual">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <line x1="10" y1="50" x2="50" y2="10" stroke="#2199EA" stroke-width="2"/>
+          <line x1="15" y1="55" x2="55" y2="15" stroke="#2199EA" stroke-width="1.5" opacity="0.5"/>
+          <line x1="5" y1="45" x2="45" y2="5" stroke="#2199EA" stroke-width="1" opacity="0.3"/>
+          <circle cx="50" cy="10" r="3" fill="#FAE80F"/>
+        </svg>
+      </div>
+      <h3>Linhas de Movimento</h3>
+      <p>Representam execução e velocidade. Usadas para indicar direção e energia.</p>
+    </div>
+    <div class="graphic-el">
+      <div class="graphic-el-visual">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <rect x="8" y="8" width="44" height="44" stroke="#137DC5" stroke-width="1.5"/>
+          <rect x="16" y="16" width="28" height="28" stroke="#2199EA" stroke-width="1" opacity="0.6"/>
+          <rect x="24" y="24" width="12" height="12" stroke="#FAE80F" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h3>Frames de Interface</h3>
+      <p>Representam tecnologia e sistemas. Criam profundidade e estrutura modular.</p>
+    </div>
+    <div class="graphic-el">
+      <div class="graphic-el-visual">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <circle cx="30" cy="30" r="8" fill="#FAE80F" opacity="0.9"/>
+          <circle cx="30" cy="30" r="14" stroke="#FAE80F" stroke-width="1" opacity="0.4"/>
+          <circle cx="30" cy="30" r="20" stroke="#FAE80F" stroke-width="0.5" opacity="0.2"/>
+          <circle cx="30" cy="30" r="26" stroke="#FAE80F" stroke-width="0.5" opacity="0.1"/>
+        </svg>
+      </div>
+      <h3>Efeitos de Glow</h3>
+      <p>Representam inovação e energia. Usados com moderação em elementos de destaque.</p>
+    </div>
+    <div class="graphic-el">
+      <div class="graphic-el-visual">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <line x1="10" y1="10" x2="50" y2="10" stroke="rgba(19,125,197,0.4)" stroke-width="0.8"/>
+          <line x1="10" y1="22" x2="50" y2="22" stroke="rgba(19,125,197,0.4)" stroke-width="0.8"/>
+          <line x1="10" y1="34" x2="50" y2="34" stroke="rgba(19,125,197,0.4)" stroke-width="0.8"/>
+          <line x1="10" y1="46" x2="50" y2="46" stroke="rgba(19,125,197,0.4)" stroke-width="0.8"/>
+          <line x1="10" y1="10" x2="10" y2="50" stroke="rgba(19,125,197,0.4)" stroke-width="0.8"/>
+          <line x1="22" y1="10" x2="22" y2="50" stroke="rgba(19,125,197,0.4)" stroke-width="0.8"/>
+          <line x1="34" y1="10" x2="34" y2="50" stroke="rgba(19,125,197,0.4)" stroke-width="0.8"/>
+          <line x1="46" y1="10" x2="46" y2="50" stroke="rgba(19,125,197,0.4)" stroke-width="0.8"/>
+          <rect x="22" y="22" width="12" height="12" fill="rgba(19,125,197,0.15)" stroke="#137DC5" stroke-width="1"/>
+        </svg>
+      </div>
+      <h3>Grids Modulares</h3>
+      <p>Representam organização e accountability. Base estrutural de todos os layouts.</p>
+    </div>
+    <div class="graphic-el">
+      <div class="graphic-el-visual">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <rect x="6" y="6" width="48" height="48" fill="rgba(19,125,197,0.08)" stroke="#0F5F96" stroke-width="1"/>
+          <rect x="12" y="12" width="36" height="36" fill="rgba(19,125,197,0.12)" stroke="#137DC5" stroke-width="1"/>
+          <rect x="18" y="18" width="24" height="24" fill="rgba(19,125,197,0.2)" stroke="#2199EA" stroke-width="1"/>
+          <rect x="24" y="24" width="12" height="12" fill="rgba(250,232,15,0.6)" stroke="#FAE80F" stroke-width="1"/>
+        </svg>
+      </div>
+      <h3>Profundidade em Camadas</h3>
+      <p>Representam complexidade e imersão. Criam profundidade visual premium.</p>
+    </div>
+  </div>
+
+  <!-- Conceito visual -->
+  <div class="divider"></div>
+  <div class="two-col" style="margin-top: 0;">
+    <div>
+      <div class="section-label" style="margin-bottom: 20px"><span class="section-num">06.1</span> Posicionamento Visual</div>
+      <p style="font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 20px;">O mundo visual da TGS está entre Gaming × Tecnologia × Entretenimento Premium.</p>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 24px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 8px; height: 8px; background: var(--yellow); flex-shrink: 0;"></div>
+          <span style="font-size: 15px; color: rgba(255,255,255,0.75);">Gaming Cinematográfico</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 8px; height: 8px; background: var(--yellow); flex-shrink: 0;"></div>
+          <span style="font-size: 15px; color: rgba(255,255,255,0.75);">Interfaces Modernas</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 8px; height: 8px; background: var(--yellow); flex-shrink: 0;"></div>
+          <span style="font-size: 15px; color: rgba(255,255,255,0.75);">Alto Contraste</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 8px; height: 8px; background: var(--yellow); flex-shrink: 0;"></div>
+          <span style="font-size: 15px; color: rgba(255,255,255,0.75);">Estética Digital Premium</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 8px; height: 8px; background: var(--yellow); flex-shrink: 0;"></div>
+          <span style="font-size: 15px; color: rgba(255,255,255,0.75);">Sistemas Visuais Imersivos</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 8px; height: 8px; background: var(--yellow); flex-shrink: 0;"></div>
+          <span style="font-size: 15px; color: rgba(255,255,255,0.75);">Energia Sofisticada</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label" style="margin-bottom: 20px"><span class="section-num">06.2</span> Linguagem de Motion</div>
+      <p style="font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 20px;">A TGS deve se sentir viva. O comportamento de motion deve ser inspirado em HUDs modernos de games, interfaces sci-fi e trailers de lançamento premium.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+        <div style="border: 1px solid rgba(19,125,197,0.2); padding: 16px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--yellow); margin-bottom: 4px;">RÁPIDO</div>
+          <div style="font-size: 11px; color: var(--gray-400);">Transições ágeis</div>
+        </div>
+        <div style="border: 1px solid rgba(19,125,197,0.2); padding: 16px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--yellow); margin-bottom: 4px;">FLUIDO</div>
+          <div style="font-size: 11px; color: var(--gray-400);">Easing suave e natural</div>
+        </div>
+        <div style="border: 1px solid rgba(19,125,197,0.2); padding: 16px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--yellow); margin-bottom: 4px;">PRECISO</div>
+          <div style="font-size: 11px; color: var(--gray-400);">Sem overshoots desnecessários</div>
+        </div>
+        <div style="border: 1px solid rgba(19,125,197,0.2); padding: 16px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--yellow); margin-bottom: 4px;">RESPONSIVO</div>
+          <div style="font-size: 11px; color: var(--gray-400);">Feedback imediato</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     07 VOZ & TOM
+───────────────────────────────────────────── -->
+<section id="voz">
+  <div class="section-label"><span class="section-num">07</span> Voz & Tom de Comunicação</div>
+  <h2 class="ch">VOZ<br>& <em>TOM</em></h2>
+  <p class="intro">A TGS comunica com confiança, clareza, energia e inteligência. A marca nunca soa burocrática, fria ou excessivamente formal.</p>
+
+  <div class="voice-grid">
+    <div class="voice-col never">
+      <h3>✕ Nunca Soa Assim</h3>
+      <div class="voice-ex">
+        <div class="voice-ex-label">Burocrático</div>
+        <div class="voice-ex-text never">"Conforme descrito no documento de especificações técnicas N.° 4782/B, o produto foi desenvolvido visando atender às necessidades do mercado consumidor..."</div>
+      </div>
+      <div class="voice-ex">
+        <div class="voice-ex-label">Genérico</div>
+        <div class="voice-ex-text never">"Somos líderes no mercado de soluções tecnológicas inovadoras para o setor de entretenimento digital."</div>
+      </div>
+      <div class="voice-ex">
+        <div class="voice-ex-label">Frio</div>
+        <div class="voice-ex-text never">"Produto disponível. Preço sob consulta. Entre em contato com nossa equipe de vendas."</div>
+      </div>
+    </div>
+    <div class="voice-col always">
+      <h3>✓ Sempre Soa Assim</h3>
+      <div class="voice-ex">
+        <div class="voice-ex-label">Intencional</div>
+        <div class="voice-ex-text always">"Criamos do zero. Este produto nasceu de meses de obsessão por game feel — e agora está pronto pra você sentir."</div>
+      </div>
+      <div class="voice-ex">
+        <div class="voice-ex-label">Visionário</div>
+        <div class="voice-ex-text always">"O futuro dos games não é apenas tecnologia. É a emoção que a tecnologia cria. É isso que construímos."</div>
+      </div>
+      <div class="voice-ex">
+        <div class="voice-ex-label">Humano</div>
+        <div class="voice-ex-text always">"Quer conversar sobre seu projeto? A gente adora uma boa ideia. Fale com a equipe."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label" style="margin-bottom: 32px"><span class="section-num">07.1</span> Pilares de Conteúdo Digital</div>
+
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3>Produto</h3>
+      <p>Games, mecânicas, lançamentos. Mostre o que foi construído com orgulho e sem rodeios.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3>Bastidores</h3>
+      <p>Processo criativo e desenvolvimento. A autenticidade da construção é parte da marca.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3>Inovação</h3>
+      <p>Tecnologia, experimentação, insights. Posicione a TGS como referência de pensamento.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <h3>Cultura</h3>
+      <p>Pessoas, colaboração, crescimento. A cultura TGS é parte essencial da identidade.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <h3>Mercado</h3>
+      <p>Tendências e posicionamento no setor de games. Voz de autoridade e visão de futuro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     08 APLICAÇÕES
+───────────────────────────────────────────── -->
+<section id="aplicacoes">
+  <div class="section-label"><span class="section-num">08</span> Aplicações da Marca</div>
+  <h2 class="ch">APLICA<br><em>ÇÕES</em></h2>
+  <p class="intro">Como o sistema de marca se comporta em aplicações reais — do digital ao impresso.</p>
+
+  <div class="aplicacoes-grid">
+    <!-- Cartão de visita -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span>Cartão de Visita</span>
+        <span style="color: var(--gray-400);">Impresso</span>
+      </div>
+      <div class="app-card-body">
+        <div class="bc-wrap">
+          <div class="bc-front">
+            <div class="logo-box" style="color: var(--blue-deep); border-color: var(--blue-deep); padding: 12px 18px;">
+              <div class="logo-box-letters" style="font-size: 28px;">TGS</div>
+              <div class="logo-box-gaming" style="font-size: 8px; letter-spacing: 5px;">GAMING</div>
+            </div>
+          </div>
+          <div class="bc-back">
+            <div class="bc-back-top">
+              <div>
+                <div class="bc-name">Giovane Kuhn</div>
+                <div class="bc-title">Founder & CEO</div>
+              </div>
+              <div class="bc-logo-small">
+                <span style="font-family: var(--font-head); font-size: 11px; font-weight: 700; color: var(--blue); line-height: 1;">TGS</span>
+                <span style="font-family: var(--font-head); font-size: 6px; font-weight: 700; color: var(--blue); letter-spacing: 2px; display: block;">GAMING</span>
+              </div>
+            </div>
+            <div class="bc-contact">
+              +55 48 996293435<br>
+              giovane@tgsgaming.com<br>
+              tgsgaming.com
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post de redes sociais -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span>Post — Redes Sociais</span>
+        <span style="color: var(--gray-400);">Digital 1:1</span>
+      </div>
+      <div class="app-card-body" style="display: flex; justify-content: center;">
+        <div class="social-post">
+          <div class="social-bg"></div>
+          <div class="social-content">
+            <div class="social-logo-sm">
+              <span style="font-size: 13px; font-weight: 700; color: var(--blue-deep); font-family: var(--font-head);">TGS</span>
+            </div>
+            <div>
+              <div class="social-headline">Criamos <em>momentum</em>.<br>Você sente.</div>
+              <div class="social-meta" style="margin-top: 10px;">tgsgaming.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assinatura de e-mail -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span>Assinatura de E-mail</span>
+        <span style="color: var(--gray-400);">Digital</span>
+      </div>
+      <div class="app-card-body">
+        <div class="email-sig-mockup">
+          <div class="sig-name">Giovane Kuhn</div>
+          <div class="sig-role">Founder & CEO — TGS Gaming</div>
+          <div class="sig-divider"></div>
+          <div class="sig-contact">
+            📞 +55 48 99629-3435<br>
+            ✉️ <a href="mailto:giovane@tgsgaming.com">giovane@tgsgaming.com</a><br>
+            🌐 <a href="https://tgsgaming.com">tgsgaming.com</a>
+          </div>
+          <div class="sig-logo-wrap">
+            <div style="background: var(--yellow); padding: 5px 10px; border: 2px solid var(--blue);">
+              <div style="font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--blue); line-height: 1;">TGS</div>
+              <div style="font-family: var(--font-head); font-size: 6px; font-weight: 700; color: var(--blue); letter-spacing: 3px;">GAMING</div>
+            </div>
+            <div style="font-size: 10px; color: #888;">www.tgsgaming.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apresentações -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <span>Apresentações</span>
+        <span style="color: var(--gray-400);">Slides</span>
+      </div>
+      <div class="app-card-body">
+        <!-- Mockup de slide -->
+        <div style="background: #0A0A0A; border: 1px solid rgba(255,255,255,0.08); padding: 28px 32px; position: relative; overflow: hidden; aspect-ratio: 16/9; display: flex; flex-direction: column; justify-content: flex-end;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 80% 20%, rgba(19,125,197,0.2) 0%, transparent 70%);"></div>
+          <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; border-left: 1px solid rgba(19,125,197,0.1);"></div>
+          <div style="position: absolute; top: 20px; right: 20px;">
+            <div style="background: var(--yellow); padding: 6px 10px; border: 2px solid var(--blue);">
+              <div style="font-family: var(--font-head); font-size: 12px; font-weight: 700; color: var(--blue); line-height: 1;">TGS</div>
+              <div style="font-family: var(--font-head); font-size: 5px; font-weight: 700; color: var(--blue); letter-spacing: 3px;">GAMING</div>
+            </div>
+          </div>
+          <div style="position: relative; z-index: 2;">
+            <div style="font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 8px;">Apresentação de Produto</div>
+            <div style="font-family: var(--font-head); font-size: 24px; font-weight: 700; line-height: 1; letter-spacing: -1px; color: var(--white);">O FUTURO<br>DO <span style="color: var(--yellow);">GAMING</span></div>
+          </div>
+        </div>
+        <div style="margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="font-size: 11px; color: var(--gray-400);">✓ Tipografia grande e impactante</div>
+          <div style="font-size: 11px; color: var(--gray-400);">✓ Hierarquia visual clara</div>
+          <div style="font-size: 11px; color: var(--gray-400);">✓ Fundo escuro como base</div>
+          <div style="font-size: 11px; color: var(--gray-400);">✓ Sem templates genéricos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     MANIFESTO
+───────────────────────────────────────────── -->
+<section id="manifesto">
+  <div class="manifesto-content">
+    <div class="section-label" style="color: rgba(255,255,255,0.6);"><span class="section-num">→</span> Manifesto da Marca</div>
+    <div class="manifesto-big">
+      NÓS<br>
+      CRIAMOS<br>
+      <span class="y">EXPERIÊN</span><br>
+      <span class="y">CIAS.</span>
+    </div>
+    <div class="manifesto-body">
+      <p>Transformamos ideias em emoção.</p>
+      <br>
+      <p>Combinamos <strong>criatividade</strong>, <strong>tecnologia</strong> e <strong>execução</strong> para construir o futuro do gaming.</p>
+      <br>
+      <p>Nos movemos <em>rápido</em>.<br>
+      Aprendemos <em>rápido</em>.<br>
+      Evoluímos <em>constantemente</em>.</p>
+      <br>
+      <p>Acreditamos que grandes produtos nascem de <strong>paixão</strong>, <strong>colaboração</strong>, <strong>experimentação</strong> e <strong>coragem</strong>.</p>
+      <br>
+      <p>Somos criadores.<br>
+      Somos construtores.<br>
+      Somos gamers.</p>
+      <br>
+      <p style="font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--white);">Somos TGS Gaming.</p>
+    </div>
+    <div class="manifesto-sign">
+      <div class="manifesto-sign-bar"></div>
+      <div class="manifesto-sign-text">Brand Book — TGS Gaming — v1.0 — 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     FOOTER
+───────────────────────────────────────────── -->
+<footer>
+  <div class="footer-left">
+    <div class="f-eyebrow">Documento Oficial</div>
+    <div class="f-title">TGS Gaming — Brand Book</div>
+  </div>
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <div style="background: var(--yellow); padding: 10px 16px; border: 2px solid var(--blue);">
+      <div style="font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--blue); line-height: 1;">TGS</div>
+      <div style="font-family: var(--font-head); font-size: 7px; font-weight: 700; color: var(--blue); letter-spacing: 4px;">GAMING</div>
+    </div>
+  </div>
+  <div class="footer-right">
+    Versão 1.0 — 2025<br>
+    Uso Interno & Externo Autorizado<br>
+    giovane@tgsgaming.com<br>
+    tgsgaming.com
+  </div>
+</footer>
+
+</body>
+</html>
